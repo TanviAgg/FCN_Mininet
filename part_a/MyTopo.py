@@ -240,14 +240,6 @@ def show_routing_tables(net):
         info(net[node['name']].cmd('route'))
 
 
-def show_traceroute(net):
-    info('\nTraceroute between host1 and host2\n')
-    info(net[host1['name']].cmd('traceroute {}'.format(host2['name'])))
-
-    info('\nTraceroute between host2 and host1\n')
-    info(net[host2['name']].cmd('traceroute {}'.format(host1['name'])))
-
-
 def ping_all(net):
     info('\nCheck connectivity between all nodes\n')
     info(net.pingAll())
@@ -267,7 +259,6 @@ if __name__ == "__main__":
     info('----------PART A2-----------\n')
     configure_static_routes(net)
     show_routing_tables(net)
-    show_traceroute(net)
 
     ping_all(net)
 
