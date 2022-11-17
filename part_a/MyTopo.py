@@ -134,11 +134,11 @@ class Topology(Topo):
                      intfName2=router1['interfaces'][0]['name'],
                      params1={'ip': ip_with_subnet(host1['interfaces'][0]['ipaddress'])},
                      params2={'ip': ip_with_subnet(router1['interfaces'][0]['ipaddress'])})
-        self.addLink(h2, r4,
-                     intfName1=host2['interfaces'][0]['name'],
-                     intfName2=router4['interfaces'][0]['name'],
-                     params1={'ip': ip_with_subnet(host2['interfaces'][0]['ipaddress'])},
-                     params2={'ip': ip_with_subnet(router4['interfaces'][0]['ipaddress'])})
+        # self.addLink(h2, r4,
+        #              intfName1=host2['interfaces'][0]['name'],
+        #              intfName2=router4['interfaces'][0]['name'],
+        #              params1={'ip': ip_with_subnet(host2['interfaces'][0]['ipaddress'])},
+        #              params2={'ip': ip_with_subnet(router4['interfaces'][0]['ipaddress'])})
 
         # # link routers
         # # r1 and r2
