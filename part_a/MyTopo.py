@@ -115,10 +115,10 @@ def ip_with_subnet(ip):
 class Topology(Topo):
     def build(self, **_opts):
         # create router nodes
-        r1 = self.addHost(router1['name'], cls=LinuxRouter, ip=None)
-        r2 = self.addHost(router2['name'], cls=LinuxRouter, ip=None)
-        r3 = self.addHost(router3['name'], cls=LinuxRouter, ip=None)
-        r4 = self.addHost(router4['name'], cls=LinuxRouter, ip=None)
+        r1 = self.addNode(router1['name'], cls=LinuxRouter, ip=None)
+        r2 = self.addNode(router2['name'], cls=LinuxRouter, ip=None)
+        r3 = self.addNode(router3['name'], cls=LinuxRouter, ip=None)
+        r4 = self.addNode(router4['name'], cls=LinuxRouter, ip=None)
 
         # create host nodes
         h1 = self.addHost(name=host1['name'],
@@ -128,18 +128,18 @@ class Topology(Topo):
                           ip=ip_with_subnet(host2['interfaces'][0]['ipaddress']),
                           defaultRoute='via {}'.format(router4['interfaces'][0]['ipaddress']))
 
-        # # link hosts and edge routers
-        # self.addLink(h1, r1,
-        #              intfName1=host1['interfaces'][0]['name'],
-        #              intfName2=router1['interfaces'][0]['name'],
-        #              params1={'ip': ip_with_subnet(host1['interfaces'][0]['ipaddress'])},
-        #              params2={'ip': ip_with_subnet(router1['interfaces'][0]['ipaddress'])})
-        # self.addLink(h2, r4,
-        #              intfName1=host2['interfaces'][0]['name'],
-        #              intfName2=router4['interfaces'][0]['name'],
-        #              params1={'ip': ip_with_subnet(host2['interfaces'][0]['ipaddress'])},
-        #              params2={'ip': ip_with_subnet(router4['interfaces'][0]['ipaddress'])})
-        #
+        # link hosts and edge routers
+        self.addLink(h1, r1,
+                     intfName1=host1['interfaces'][0]['name'],
+                     intfName2=router1['interfaces'][0]['name'],
+                     params1={'ip': ip_with_subnet(host1['interfaces'][0]['ipaddress'])},
+                     params2={'ip': ip_with_subnet(router1['interfaces'][0]['ipaddress'])})
+        self.addLink(h2, r4,
+                     intfName1=host2['interfaces'][0]['name'],
+                     intfName2=router4['interfaces'][0]['name'],
+                     params1={'ip': ip_with_subnet(host2['interfaces'][0]['ipaddress'])},
+                     params2={'ip': ip_with_subnet(router4['interfaces'][0]['ipaddress'])})
+
         # # link routers
         # # r1 and r2
         # self.addLink(r1, r2,
