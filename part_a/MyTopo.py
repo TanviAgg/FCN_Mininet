@@ -237,7 +237,7 @@ def show_routing_tables(net):
     node_names = [router1, router2, router3, router4, host1, host2]
     for node in node_names:
         info('{} {}: Routing table information\n'.format(node['type'], node['name']))
-        info(net[node].cmd('route'))
+        info(net[node['name']].cmd('route'))
 
 
 def show_traceroute(net):
@@ -257,13 +257,11 @@ if __name__ == "__main__":
     info('----------PART A1-----------\n')
     my_topology = Topology()
 
-    # part A2
-    info('----------PART A2-----------\n')
     net = Mininet(topo=my_topology)
     net.start()
 
-    ping_all(net)
-
+    # part A2
+    info('----------PART A2-----------\n')
     configure_static_routes(net)
     show_routing_tables(net)
     show_traceroute(net)
