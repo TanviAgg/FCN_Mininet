@@ -1,8 +1,8 @@
+from mininet.log import setLogLevel, info
 from mininet.topo import Topo
 from mininet.net import Mininet
 from mininet.cli import CLI
 from mininet.examples.linuxrouter import LinuxRouter
-from mininet.log import setLogLevel, info
 
 
 host1 = {
