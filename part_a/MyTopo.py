@@ -241,12 +241,15 @@ def show_routing_tables(net):
 
 
 def show_traceroute(net):
-    # info(net[router].cmd('route'))
-    pass
+    info('\nTraceroute between host1 and host2\n')
+    info(net[host1['name']].cmd('traceroute {}'.format(host2['name'])))
+
+    info('\nTraceroute between host2 and host1\n')
+    info(net[host2['name']].cmd('traceroute {}'.format(host1['name'])))
 
 
 def ping_all(net):
-    info('\nPinging all nodes and routers\n')
+    info('\nCheck connectivity between all nodes\n')
     info(net.pingAll())
 
 
