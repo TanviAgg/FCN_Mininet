@@ -112,7 +112,7 @@ router4 = {
 class MyRouter(Node):
     def config(self, **params):
         # config base class
-        super(MyRouter, self).config(params)
+        super(MyRouter, self).config(**params)
         # enable forwarding
         self.cmd('sysctl net.ipv4.ip_forward=1')
         # change directory to bird.conf
