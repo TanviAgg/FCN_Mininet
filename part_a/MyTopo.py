@@ -265,11 +265,11 @@ if __name__ == "__main__":
 
     ping_all(net)
 
-    configure_static_routes(net)
-    show_routing_tables(net)
-    show_traceroute(net)
-
-    ping_all(net)
+    # configure_static_routes(net)
+    # show_routing_tables(net)
+    # show_traceroute(net)
+    #
+    # ping_all(net)
 
     CLI(net)
     net.stop()
