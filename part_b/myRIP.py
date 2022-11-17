@@ -1,3 +1,5 @@
+import time
+
 from mininet.log import setLogLevel, info
 from mininet.topo import Topo
 from mininet.net import Mininet
@@ -136,10 +138,10 @@ def ip_with_subnet(ip):
 class Topology(Topo):
     def build(self, **_opts):
         # create router nodes
-        r1 = self.addNode(router1['name'], cls=MyRouter)
-        r2 = self.addNode(router2['name'], cls=MyRouter)
-        r3 = self.addNode(router3['name'], cls=MyRouter)
-        r4 = self.addNode(router4['name'], cls=MyRouter)
+        r1 = self.addNode(router1['name'], cls=MyRouter, ip=ip_with_subnet(router1['interfaces'][0]['ipaddress']))
+        r2 = self.addNode(router2['name'], cls=MyRouter, ip=ip_with_subnet(router2['interfaces'][0]['ipaddress']))
+        r3 = self.addNode(router3['name'], cls=MyRouter, ip=ip_with_subnet(router3['interfaces'][0]['ipaddress']))
+        r4 = self.addNode(router4['name'], cls=MyRouter, ip=ip_with_subnet(router4['interfaces'][0]['ipaddress']))
 
         # create host nodes
         h1 = self.addHost(name=host1['name'],
@@ -209,6 +211,8 @@ if __name__ == "__main__":
 
     net = Mininet(topo=my_topology)
     net.start()
+
+    time.sleep(1)
     show_routing_tables(net)
 
     ping_all(net)
