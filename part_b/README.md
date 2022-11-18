@@ -83,17 +83,7 @@ Kernel IP routing table
 Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
 default         10.0.6.1        0.0.0.0         UG    0      0        0 h2-interface-0
 10.0.6.0        0.0.0.0         255.255.255.0   U     0      0        0 h2-interface-0
-
-Check connectivity between all nodes
-*** Ping: testing ping reachability
-H1 -> H2 R1 R2 R3 R4 
-H2 -> H1 R1 R2 R3 R4 
-R1 -> H1 H2 R2 R3 R4 
-R2 -> H1 H2 R1 R3 R4 
-R3 -> H1 H2 R1 R2 R4 
-R4 -> H1 H2 R1 R2 R3 
-*** Results: 0% dropped (30/30 received)
-0.0*** Starting CLI:
+*** Starting CLI:
 mininet> H1 traceroute H2
 traceroute to 10.0.6.2 (10.0.6.2), 30 hops max, 60 byte packets
  1  10.0.1.1 (10.0.1.1)  0.037 ms  0.009 ms  0.007 ms
