@@ -143,22 +143,44 @@ class Topology(Topo):
         r3 = self.addHost('R3', cls=MyRouter, ip=None)
         r4 = self.addHost('R4', cls=MyRouter, ip=None)
 
-        h1 = self.addHost(name='H1', ip='10.0.1.1/24', defaultRoute='via 10.0.1.2')
+        h1 = self.addHost(name='H1', ip='10.0.1.2/24', defaultRoute='via 10.0.1.1')
         h2 = self.addHost(name='H2', ip='10.0.6.2/24', defaultRoute='via 10.0.6.1')
 
         self.addLink(h1, r1, intfName1='h1-interface-0', intfName2='r1-interface-0',
-                     params1={'ip': '10.0.1.1/24'}, params2={'ip': '10.0.1.2/24'})
+                     params1={'ip': '10.0.1.2/24'}, params2={'ip': '10.0.1.1/24'})
         self.addLink(h2, r4, intfName1='h2-interface-0', intfName2='r4-interface-0',
                      params1={'ip': '10.0.6.2/24'}, params2={'ip': '10.0.6.1/24'})
 
         self.addLink(r1, r2, intfName1='r1-interface-1', intfName2='r2-interface-0',
-                     params1={'ip': '10.0.2.1/24'}, params2={'ip': '10.0.2.2/24'})
+                     params1={'ip': '10.0.2.2/24'}, params2={'ip': '10.0.2.1/24'})
         self.addLink(r2, r4, intfName1='r2-interface-1', intfName2='r4-interface-1',
-                     params1={'ip': '10.0.5.1/24'}, params2={'ip': '10.0.5.2/24'})
-        self.addLink(r1, r3, intfName1='r1-interface-2', intfName2='r3-interface-0',
-                     params1={'ip': '10.0.3.1/24'}, params2={'ip': '10.0.3.2/24'})
-        self.addLink(r3, r4, intfName1='r3-interface-1', intfName2='r4-interface-2',
                      params1={'ip': '10.0.4.1/24'}, params2={'ip': '10.0.4.2/24'})
+        self.addLink(r1, r3, intfName1='r1-interface-2', intfName2='r3-interface-0',
+                     params1={'ip': '10.0.3.2/24'}, params2={'ip': '10.0.3.1/24'})
+        self.addLink(r3, r4, intfName1='r3-interface-1', intfName2='r4-interface-2',
+                     params1={'ip': '10.0.5.1/24'}, params2={'ip': '10.0.5.2/24'})
+        # # create router nodes
+        # r1 = self.addHost('R1', cls=MyRouter, ip=None)
+        # r2 = self.addHost('R2', cls=MyRouter, ip=None)
+        # r3 = self.addHost('R3', cls=MyRouter, ip=None)
+        # r4 = self.addHost('R4', cls=MyRouter, ip=None)
+        #
+        # h1 = self.addHost(name='H1', ip='10.0.1.1/24', defaultRoute='via 10.0.1.2')
+        # h2 = self.addHost(name='H2', ip='10.0.6.2/24', defaultRoute='via 10.0.6.1')
+        #
+        # self.addLink(h1, r1, intfName1='h1-interface-0', intfName2='r1-interface-0',
+        #              params1={'ip': '10.0.1.1/24'}, params2={'ip': '10.0.1.2/24'})
+        # self.addLink(h2, r4, intfName1='h2-interface-0', intfName2='r4-interface-0',
+        #              params1={'ip': '10.0.6.2/24'}, params2={'ip': '10.0.6.1/24'})
+        #
+        # self.addLink(r1, r2, intfName1='r1-interface-1', intfName2='r2-interface-0',
+        #              params1={'ip': '10.0.2.1/24'}, params2={'ip': '10.0.2.2/24'})
+        # self.addLink(r2, r4, intfName1='r2-interface-1', intfName2='r4-interface-1',
+        #              params1={'ip': '10.0.5.1/24'}, params2={'ip': '10.0.5.2/24'})
+        # self.addLink(r1, r3, intfName1='r1-interface-2', intfName2='r3-interface-0',
+        #              params1={'ip': '10.0.3.1/24'}, params2={'ip': '10.0.3.2/24'})
+        # self.addLink(r3, r4, intfName1='r3-interface-1', intfName2='r4-interface-2',
+        #              params1={'ip': '10.0.4.1/24'}, params2={'ip': '10.0.4.2/24'})
         # r1 = self.addNode(router1['name'], cls=MyRouter, ip=None)
         # r2 = self.addNode(router2['name'], cls=MyRouter, ip=None)
         # r3 = self.addNode(router3['name'], cls=MyRouter, ip=None)
