@@ -138,10 +138,10 @@ def ip_with_subnet(ip):
 class Topology(Topo):
     def build(self, **_opts):
         # create router nodes
-        r1 = self.addHost('R1', cls=MyRouter, ip='10.0.1.2/24')
-        r2 = self.addHost('R2', cls=MyRouter, ip='10.0.2.2/24')
-        r3 = self.addHost('R3', cls=MyRouter, ip='10.0.3.2/24')
-        r4 = self.addHost('R4', cls=MyRouter, ip='10.0.6.1/24')
+        r1 = self.addHost('R1', cls=MyRouter, ip=None)
+        r2 = self.addHost('R2', cls=MyRouter, ip=None)
+        r3 = self.addHost('R3', cls=MyRouter, ip=None)
+        r4 = self.addHost('R4', cls=MyRouter, ip=None)
 
         h1 = self.addHost(name='H1', ip='10.0.1.1/24', defaultRoute='via 10.0.1.2')
         h2 = self.addHost(name='H2', ip='10.0.6.2/24', defaultRoute='via 10.0.6.1')
