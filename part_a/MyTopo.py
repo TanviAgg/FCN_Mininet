@@ -9,7 +9,7 @@ host1 = {
     'name': 'H1',
     'interfaces': [
         {
-            'ipaddress': '10.0.1.1',
+            'ipaddress': '10.0.1.2',
             'subnet': '10.0.1.0/24',
             'name': 'h1-interface-0'
         }
@@ -33,17 +33,17 @@ router1 = {
     'name': 'R1',
     'interfaces': [
         {
-            'ipaddress': '10.0.1.2',
+            'ipaddress': '10.0.1.1',
             'subnet': '10.0.1.0/24',
             'name': 'r1-interface-0'
         },
         {
-            'ipaddress': '10.0.2.1',
+            'ipaddress': '10.0.2.2',
             'subnet': '10.0.2.0/24',
             'name': 'r1-interface-1'
         },
         {
-            'ipaddress': '10.0.3.1',
+            'ipaddress': '10.0.3.2',
             'subnet': '10.0.3.0/24',
             'name': 'r1-interface-2'
         }
@@ -55,13 +55,13 @@ router2 = {
     'name': 'R2',
     'interfaces': [
         {
-            'ipaddress': '10.0.2.2',
+            'ipaddress': '10.0.2.1',
             'subnet': '10.0.2.0/24',
             'name': 'r2-interface-0'
         },
         {
-            'ipaddress': '10.0.5.1',
-            'subnet': '10.0.5.0/24',
+            'ipaddress': '10.0.4.1',
+            'subnet': '10.0.4.0/24',
             'name': 'r2-interface-1'
         }
     ],
@@ -72,13 +72,13 @@ router3 = {
     'name': 'R3',
     'interfaces': [
         {
-            'ipaddress': '10.0.3.2',
+            'ipaddress': '10.0.3.1',
             'subnet': '10.0.3.0/24',
             'name': 'r3-interface-0'
         },
         {
-            'ipaddress': '10.0.4.1',
-            'subnet': '10.0.4.0/24',
+            'ipaddress': '10.0.5.1',
+            'subnet': '10.0.5.0/24',
             'name': 'r3-interface-1'
         }
     ],
@@ -94,13 +94,13 @@ router4 = {
             'name': 'r4-interface-0'
         },
         {
-            'ipaddress': '10.0.5.2',
-            'subnet': '10.0.5.0/24',
+            'ipaddress': '10.0.4.2',
+            'subnet': '10.0.4.0/24',
             'name': 'r4-interface-1'
         },
         {
-            'ipaddress': '10.0.4.2',
-            'subnet': '10.0.4.0/24',
+            'ipaddress': '10.0.5.2',
+            'subnet': '10.0.5.0/24',
             'name': 'r4-interface-2'
         }
     ],
