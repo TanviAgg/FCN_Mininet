@@ -240,11 +240,6 @@ def show_routing_tables(net):
         info(net[node['name']].cmd('route'))
 
 
-def ping_all(net):
-    info('\nCheck connectivity between all nodes\n')
-    info(net.pingAll())
-
-
 if __name__ == "__main__":
     setLogLevel('info')
 
@@ -259,8 +254,6 @@ if __name__ == "__main__":
     info('----------PART A2-----------\n')
     configure_static_routes(net)
     show_routing_tables(net)
-
-    ping_all(net)
 
     CLI(net)
     net.stop()
