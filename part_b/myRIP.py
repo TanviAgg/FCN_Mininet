@@ -145,11 +145,9 @@ class Topology(Topo):
 
         # create host nodes
         h1 = self.addHost(name=host1['name'],
-                          ip=ip_with_subnet(host1['interfaces'][0]['ipaddress']),
-                          defaultRoute='via {}'.format(router1['interfaces'][0]['ipaddress']))
+                          ip=ip_with_subnet(host1['interfaces'][0]['ipaddress']))
         h2 = self.addHost(name=host2['name'],
-                          ip=ip_with_subnet(host2['interfaces'][0]['ipaddress']),
-                          defaultRoute='via {}'.format(router4['interfaces'][0]['ipaddress']))
+                          ip=ip_with_subnet(host2['interfaces'][0]['ipaddress']))
 
         # link hosts and edge routers
         self.addLink(h1, r1,
