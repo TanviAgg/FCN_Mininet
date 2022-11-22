@@ -207,6 +207,7 @@ if __name__ == "__main__":
     net = Mininet(topo=my_topology)
     net.start()
 
+    # add sleep time to allow routes to be updated
     time.sleep(1)
     show_routing_tables(net)
 

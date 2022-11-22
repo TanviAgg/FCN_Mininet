@@ -6,8 +6,8 @@
 - To get traceroute output, run the following command from mininet
   - `> H1 traceroute H2`
   - `> H2 traceroute H1`
-- To bring down the link between R1 and R2 (or R3), run:
-  - `mininet> link R1 R2 down` (or replace R2 with R3).
+- To bring down the link between R1 and R3 (or R2), run:
+  - `mininet> link R1 R3 down` (or replace R3 with R2).
   - Now run the command to get traceroute again (same as above).
 
 # Output:
